@@ -2,32 +2,43 @@
 
 Stellar Burgers is a React and TypeScript application for building custom burgers, placing orders and working with a live order feed.
 
-The project is focused on application logic, state management, routing, authentication, API integration and testing.
+The project was built on top of a provided starter interface. My work focused on the application layer: state management, routing, authentication, API integration and automated testing.
 
-## Features
-
-- burger constructor based on ingredients loaded from an external API;
-- user registration, login and logout;
-- protected routes for authenticated users;
-- session restoration and token-based authentication;
-- user profile and personal order history;
-- public order feed and order details;
-- Redux-based application state;
-- asynchronous API requests and error handling;
-- modal routing for ingredient and order details;
-- automated tests for application behavior.
+<!-- TODO: Add 2 screenshots here: the burger constructor and the order feed / order details flow. -->
 
 ## My contribution
 
-The project was built on top of a provided starter interface and component set. My work was focused on the application layer and included:
+I implemented the main frontend application logic, including:
 
-- implementing Redux state management and asynchronous actions;
-- connecting the interface to the external API;
-- implementing authentication, session handling and token refresh logic;
-- configuring protected routes and post-login navigation;
-- implementing order creation, order history and feed-related behavior;
-- wiring modal routes and page-level navigation;
-- adding and maintaining automated tests for the implemented functionality.
+- Redux state management and asynchronous actions;
+- API integration and request handling;
+- registration, login, logout and session restoration;
+- token refresh logic;
+- protected routes and post-login navigation;
+- order creation and personal order history;
+- public order feed behavior;
+- modal routing for ingredients and orders;
+- automated tests for the implemented flows.
+
+## Key features
+
+- burger constructor based on ingredients loaded from an external API;
+- authenticated and protected user areas;
+- profile and personal order history;
+- public order feed;
+- ingredient and order details;
+- token-based authentication;
+- asynchronous state handling with Redux Toolkit.
+
+## Technical decisions
+
+Application state is centralized in Redux Toolkit. Asynchronous API operations are separated into dedicated actions and slices so loading, error and success states remain predictable across the interface.
+
+Protected routing keeps unauthenticated users away from private pages and preserves navigation intent around the login flow.
+
+Ingredient and order details can open as modal routes while still supporting direct navigation to dedicated pages.
+
+The test suite covers both application logic and user-facing flows.
 
 ## Tech stack
 
@@ -42,39 +53,36 @@ The project was built on top of a provided starter interface and component set. 
 - Playwright
 - Storybook
 
-## Getting started
+## Testing
 
-Clone the repository and install dependencies:
+Jest and React Testing Library are used for component and application-level tests. Playwright covers end-to-end scenarios.
+
+Useful commands:
+
+```bash
+npm run test
+npm run test:coverage
+npm run test:playwright
+```
+
+## Run locally
 
 ```bash
 git clone https://github.com/alexeydev42/stellar-burgers.git
 cd stellar-burgers
 npm install
-```
-
-Create an `.env` file based on `.env.example` and provide the API URL required by the project.
-
-Start the development server:
-
-```bash
 npm start
 ```
 
-## Useful commands
+Create an `.env` file from `.env.example` and provide the API URL required by the project.
+
+Other useful commands:
 
 ```bash
-npm start
 npm run lint
-npm run test
-npm run test:coverage
-npm run test:playwright
 npm run storybook
 ```
 
-## Testing
+## Project context
 
-The project includes automated tests for application logic and user flows. Jest and React Testing Library are used for component and application-level tests, while Playwright is used for end-to-end scenarios.
-
-## About the project
-
-The project was developed during the Yandex Practicum Frontend Developer program using a prepared UI foundation. The main development work in this repository was centered around frontend application logic, routing, state management, API integration, authentication and testing.
+This project was developed during the Yandex Practicum Frontend Developer program using a prepared UI foundation. The main development work in this repository is the frontend application logic and its integration with routing, state, API and tests.
