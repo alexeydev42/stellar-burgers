@@ -4,7 +4,9 @@ Stellar Burgers is a React and TypeScript application for building custom burger
 
 The project was built on top of a provided starter interface. My work focused on the application layer: state management, routing, authentication, API integration and automated testing.
 
-<!-- TODO: Add 2 screenshots here: the burger constructor and the order feed / order details flow. -->
+## Screenshot
+
+![Stellar Burgers burger constructor](docs/screenshots/stellar-burgers.webp)
 
 ## My contribution
 
